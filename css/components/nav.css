@@ -1,0 +1,48 @@
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    backdrop-filter: blur(10px);
+    padding: 1rem 1.5rem;
+}
+
+header .logo {
+    font-family: var(--font-family-heading);
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: var(--foreground);
+    transition: color 0.3s ease;
+}
+
+header .logo:hover {
+    color: var(--primary);
+}
+
+header .logo span {
+    font-family: var(--font-family-heading);
+    color: var(--primary);
+}
+
+header nav ul {
+    display: flex;
+    gap: 2rem;
+}
+
+header nav ul li a {
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding-bottom: 3px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--foreground);
+}
+
+header nav ul li a.active {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+}
