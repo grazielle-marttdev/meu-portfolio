@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* === CORES BASE === */
+    --background: hsl(220 20% 2%); 
+    --foreground: hsl(210 20% 92%); 
+
+    /* === SUPERFÍCIES === */
+    --card: hsl(220 15% 6%); 
+    --card-foreground: hsl(210 20% 92%);
+    --popover: hsl(220 15% 6%);
+    --popover-foreground: hsl(210 20% 92%);
+
+    /* === COR PRIMÁRIA (Cortana Cyan) === */
+    --primary: hsl(193 100% 43%); 
+    --primary-foreground: hsl(220 20% 2%);
+
+    /* === COR SECUNDÁRIA (Grafite Metálico) === */
+    --secondary: hsl(215 15% 12%); 
+    --secondary-foreground: hsl(210 20% 85%);
+
+    /* === TONS MUTADOS === */
+    --muted: hsl(215 12% 15%); 
+    --muted-foreground: hsl(215 15% 55%);
+    /* === COR DE ACENTO (UNSC Green) === */
+    --accent: hsl(160 60% 35%); 
+    --accent-foreground: hsl(210 20% 92%);
+
+    /* === UTILITÁRIOS === */
+    --destructive: hsl(0 62% 50%); 
+    --destructive-foreground: hsl(210 20% 98%);
+    --border: hsl(215 15% 15%); 
+    --input: hsl(215 15% 12%);
+    --ring: hsl(193 100% 43%); 
+
+    /* === TOKENS ESPECIAIS HALO === */
+    --glow-primary: hsl(193 100% 43%); /* Para efeitos de brilho */
+    --radius: 0.25rem; /* Bordas angulares (pequenas) */
+
+    /* TIPOGRAFIA */
+    --font-family-heading: 'Orbitron', sans-serif;
+    --font-family-body: 'Rajdhani', sans-serif;
+    --font-family-monospace: 'JetBrains Mono', monospace;
+}
