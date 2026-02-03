@@ -15,6 +15,18 @@
     --primary: hsl(193 100% 43%); 
     --primary-foreground: hsl(220 20% 2%);
 
+    /* === TONS PRIMÁRIOS COM OPACIDADE === */
+    --primary-80: rgba(79, 195, 255, 0.8);
+    --primary-60: rgba(79, 195, 255, 0.6);
+    --primary-45: rgba(79, 195, 255, 0.45);
+    --primary-35: rgba(79, 195, 255, 0.35);
+    --primary-25: rgba(79, 195, 255, 0.25);
+    --primary-10: rgba(79, 195, 255, 0.1);
+    --primary-light-80: rgba(111, 211, 255, 0.8);
+    --primary-light-35: rgba(111, 211, 255, 0.35);
+    --primary-light-15: rgba(111, 211, 255, 0.15);
+    --primary-light-08: rgba(111, 211, 255, 0.08);
+    
     /* === COR SECUNDÁRIA (Grafite Metálico) === */
     --secondary: hsl(215 15% 12%); 
     --secondary-foreground: hsl(210 20% 85%);
