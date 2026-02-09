@@ -6,3 +6,31 @@ body {
     background-color: var(--background);
     color: var(--muted-foreground);
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-divider {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    margin: 2.5rem 0;
+}
+
+.section-divider::before {
+    content: '';
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--primary-light-80),
+        transparent
+    );
+}
