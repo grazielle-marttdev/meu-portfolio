@@ -1,23 +1,9 @@
 .about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 95px 325px;
-}
-
-.about .span-section-number {
-    color: var(--primary);
-    font-family: var(--font-family-monospace);
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    margin-bottom: 1rem;
+    margin-left: 20.3125rem;
+    margin-right: 20.3125rem;
 }
 
 .about .section-title {
-    color: var(--foreground);
-    font-family: var(--font-family-heading);
-    font-size: 2.25rem;
     margin-bottom: 4rem;
 }
 
@@ -72,15 +58,5 @@
 }
 
 .about .techs {
-    display: flex;
-    flex-wrap: wrap;
     gap: 1rem;
-}
-
-.about .techs li {
-    font-family: var(--font-family-monospace);
-    font-size: 0.75rem;
-    text-align: center;
-    padding: 0.25rem 0.75rem;
-    border: 1px solid var(--border);
 }

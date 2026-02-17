@@ -4,3 +4,39 @@
 @import url('components/projects.css');
 @import url('components/contact.css');
 @import url('components/footer.css');
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5.9375rem;
+    margin-bottom: 5.9375rem;
+}
+
+.span-section-number {
+    color: var(--primary);
+    font-family: var(--font-family-monospace);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    color: var(--foreground);
+    font-family: var(--font-family-heading);
+    font-size: 2.25rem;
+}
+
+.techs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.techs li {
+    font-family: var(--font-family-monospace);
+    font-size: 0.75rem;
+    text-align: center;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--border);
+}
