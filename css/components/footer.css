@@ -1,0 +1,9 @@
+footer {
+    margin-bottom: 2.5rem;
+}
+
+footer p {
+    font-family: var(--font-family-monospace);
+    font-size: 0.75rem;
+    opacity: 0.4;
+}
