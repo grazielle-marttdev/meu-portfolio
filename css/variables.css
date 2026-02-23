@@ -46,7 +46,7 @@
     --ring: hsl(193 100% 43%); 
 
     /* === TOKENS ESPECIAIS HALO === */
-    --glow-primary: hsl(193 100% 43%); /* Para efeitos de brilho */
+    --glow-primary: hsla(193, 100%, 43%, 0.357); /* Para efeitos de brilho */
     --radius: 0.25rem; /* Bordas angulares (pequenas) */
 
     /* TIPOGRAFIA */
