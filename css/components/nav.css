@@ -34,7 +34,7 @@ header nav ul {
 
 header nav ul li a {
     font-size: 0.875rem;
-    font-weight: 500;
+    font-weight: 600;
     padding-bottom: 3px;
     transition: color 0.3s ease, border-bottom 0.3s ease;
 }
