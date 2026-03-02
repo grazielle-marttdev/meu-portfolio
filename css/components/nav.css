@@ -27,6 +27,19 @@ header .logo span {
     color: var(--primary);
 }
 
+header .menu-toggle {
+    font-size: 1.125rem;
+    color: var(--muted-foreground);
+    background-color: transparent;
+    border: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+header .menu-toggle:hover {
+    color: var(--foreground);
+}
+
 header nav ul {
     display: flex;
     gap: 2rem;
@@ -46,4 +59,66 @@ header nav ul li a:hover {
 header nav ul li a.active {
     color: var(--primary);
     border-bottom: 2px solid var(--primary);
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-toggle i.hide {
+    display: none;
+}
+
+@media (min-width: 1480px) {
+    header {
+        justify-content: space-around;
+        gap: 36.25rem;
+    }
+
+    header nav ul {
+        gap: 3rem;
+    }
+
+    header nav ul li a {
+        font-size: 0.9375rem;
+    }
+}
+
+
+/* MENU HAMBÚRGUER */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 2rem;
+        background-color: var(--card);
+        backdrop-filter: blur(0);
+    }
+
+    header .logo {
+        font-size: 1rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav.hide {
+        display: none;
+    }
+
+    header nav {
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        border-top: 1px solid var(--primary-light-08);
+    } 
+
+    header nav ul {
+        background-color: var(--card);
+        flex-direction: column;
+        align-items: center;
+        gap: 1.4rem;
+        padding: 1.25rem;
+    }
 }
