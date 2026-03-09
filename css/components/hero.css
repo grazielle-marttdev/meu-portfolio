@@ -1,10 +1,11 @@
 .hero {
     position: relative;
-    height: 100vh;
+    min-height: 100svh; /* altura mínima igual a 100% da viewport "estável" no mobile */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .hero .status {
@@ -66,7 +67,10 @@
 
 .hero h1 {
     font-family: var(--font-family-heading);
-    font-size: 6rem;
+    font-size: clamp(2.8rem, 8vw, 6rem); /* nunca menor que 2.8rem, usar 8vw, nunca maior que 6rem */
+    line-height: 1.05;
+    text-align: center;
+    text-wrap: balance; /* equilibra quebras de linha, deixando-as com tamanho parecido */
     color: var(--foreground);
     margin-bottom: 1rem;
     text-shadow: 
@@ -83,6 +87,8 @@
 .hero p {
     font-size: 1.25rem;
     margin: 0 1.25rem 2rem 1.25rem;
+    text-align: center;
+    max-width: 42ch; /* Limita a largura do texto para ~42 caracteres por linha */
     opacity: 0.85;
 }
 
@@ -138,8 +144,7 @@
     position: absolute;
     bottom: 2rem;
     left: 50%;
-    right: 50%;
-    transform: translateX(50%);
+    transform: translateX(-50%);
 
     display: flex;
     flex-direction: column;
