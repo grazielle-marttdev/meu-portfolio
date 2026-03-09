@@ -186,3 +186,89 @@
         opacity: 0.5;
     }
 }
+
+
+@media (max-width: 1024px) {
+    .hero .status i {
+        font-size: 0.5rem;
+    }
+
+    .hero p {
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero .status span {
+        font-size: 0.6875rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero .role {
+        font-size: 0.75rem;
+    }
+
+    .hero .social-media {
+        font-size: 1.375rem;
+    }
+
+    .explore-button span {
+        font-size: 0.6875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 1.5rem;
+    }
+
+    .hero h1 {
+        letter-spacing: 0.03em;
+    }
+
+    .hero p {
+        font-size: 0.9375rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero .role {
+        font-size: 0.7rem;
+    }
+
+    .hero .social-media {
+        font-size: 1.25rem;
+    }
+
+    .explore-button span {
+        font-size: 0.625rem;
+    }
+
+    .explore-button i {
+        font-size: 0.6875rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .hero {
+        padding: 1rem;
+    }
+
+    .hero p {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-height: 760px) {
+    .hero {
+        gap: 0.75rem;
+    }
+
+    .hero .explore-button a {
+        position: static;
+        transform: none;
+        margin-top: 0.75rem;
+    }
+}
