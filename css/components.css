@@ -11,6 +11,9 @@
     align-items: center;
     margin-top: 5.9375rem;
     margin-bottom: 5.9375rem;
+    padding: 0 2rem;
+    width: 100%;
+    max-width: 900px;
 }
 
 .span-section-number {
@@ -39,4 +42,31 @@
     text-align: center;
     padding: 0.25rem 0.75rem;
     border: 1px solid var(--border);
+}
+
+
+@media (max-width: 768px) {
+    .span-section-number {
+        font-size: 0.6875rem;
+    }
+
+    .section .section-title {
+        font-size: 1.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 0 1rem;
+        margin-top: 5.125rem;
+        margin-bottom: 5.125rem;
+    }
+
+    .span-section-number {
+        font-size: 0.625rem;
+    }
+
+    .section .section-title {
+        font-size: 1.75rem;
+    }
 }
