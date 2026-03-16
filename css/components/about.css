@@ -59,3 +59,32 @@
     justify-content: center;
     gap: 1rem;
 }
+
+
+@media (max-width: 768px) {    
+    .about p {
+        font-size: 1rem;
+    }
+
+    .about .focus-list li {
+        font-size: 1rem;
+    }
+
+    .about .focus-list i {
+        font-size: 0.675rem;
+    }
+
+    .about .about-tagline {
+        font-size: 0.9375rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about .section-title {
+        margin-bottom: 3rem;
+    }
+
+    .about h3 {
+        font-size: 1.0625rem;
+    }
+}
