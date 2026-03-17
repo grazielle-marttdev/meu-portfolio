@@ -98,6 +98,7 @@
     color: var(--primary);
     font-family: var(--font-family-monospace);
     font-size: 0.875rem;
+    text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     padding: 0.5rem 1rem;
