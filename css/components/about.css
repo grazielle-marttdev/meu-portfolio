@@ -15,6 +15,21 @@
     line-height: 1.75rem;
 }
 
+.about .highlight {
+    color: var(--primary); 
+    font-weight: 600;     
+    letter-spacing: 0.02em;
+}
+
+.about .tech-highlight {
+    color: var(--primary-light-80);
+    font-family: var(--font-family-monospace);
+    font-size: 0.8125rem;
+    background: var(--primary-light-08);
+    padding: 0.1rem 0.375rem;
+    border-radius: 4px;
+}
+
 .about h3 {
     color: var(--secondary-foreground);
     font-family: var(--font-family-heading);
