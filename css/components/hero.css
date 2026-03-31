@@ -1,10 +1,8 @@
-.hero {
+.section.hero {
     position: relative;
     min-height: 100svh; /* altura mínima igual a 100% da viewport "estável" no mobile */
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    margin: 0;
     width: 100%;
 }
 
