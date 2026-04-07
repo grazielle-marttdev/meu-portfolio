@@ -167,17 +167,19 @@
     border-radius: 6px;
 }
 
-.modal-container i {
+.modal-container button {
     position: absolute;
     top: 15px;
     right: 15px;
     font-size: 1.2rem;
     color: var(--foreground);
+    background-color: transparent;
+    border: none;
     cursor: pointer;
     transition: color 0.3s ease
 }
 
-.modal-container i:hover {
+.modal-container button i:hover {
     color: var(--primary);
 }
 

@@ -33,7 +33,11 @@ export function projectModal() {
         btn.addEventListener('click', () => {
             // Pega os dados correspondentes ao botão clicado usando o índice
             const data = modalData[index];
-            
+            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+            // Atualiza o estado de aria-expanded para refletir a abertura do modal
+            btn.setAttribute('aria-expanded', !isExpanded);
+
             modalContainer.classList.remove('hide');
             document.body.style.overflow = 'hidden';
 
@@ -55,6 +59,9 @@ export function projectModal() {
     closeBtn.addEventListener('click', () => {
         modalContainer.classList.add('hide');
         document.body.style.overflow = ''; 
+
+        // Reseta o estado de aria-expanded para todos os botões ao fechar o modal
+        detailsBtn.forEach(btn => btn.setAttribute('aria-expanded', 'false'));
     })
 }
 

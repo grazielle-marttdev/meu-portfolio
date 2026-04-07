@@ -31,10 +31,10 @@
 
         <nav class="hide" id="main-nav" aria-label="Navegação principal">
             <ul>
-                <li><a href="#hero" class="link">Início</a></li>
-                <li><a href="#about" class="link">Sobre</a></li>
-                <li><a href="#projects" class="link">Projetos</a></li>
-                <li><a href="#contact" class="link">Contato</a></li>
+                <li><a href="#hero" class="link" aria-label="Ir para o início">Início</a></li>
+                <li><a href="#about" class="link" aria-label="Ir para a seção Sobre">Sobre</a></li>
+                <li><a href="#projects" class="link" aria-label="Ir para a seção Projetos">Projetos</a></li>
+                <li><a href="#contact" class="link" aria-label="Ir para a seção Contato">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -52,12 +52,12 @@
             <span class="role">Estudante de Desenvolvimento Web</span>
 
             <div class="social-media">
-                <a href="https://github.com/grazielle-marttdev" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/grazielle-martins-557b61334/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/grazielle-marttdev" target="_blank" aria-label="GitHub" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/grazielle-martins-557b61334/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
             </div>
 
             <nav class="explore-button">
-                <a href="#about">
+                <a href="#about" aria-label="Ir para a seção Sobre">
                     <span >Explorar</span>
                     <i class="fas fa-chevron-down"></i>
                 </a>
@@ -146,9 +146,9 @@
                                 <li>JavaScript</li>
                             </ul>
 
-                            <button class="details-btn">Detalhes</button>
+                            <button class="details-btn" aria-label="Ver detalhes do projeto Amigurumis da Vovó" aria-expanded="false" aria-controls="modal-container">Detalhes</button>
 
-                            <a href="https://github.com/grazielle-marttdev/amigurumis-vovo" target="_blank">
+                            <a href="https://github.com/grazielle-marttdev/amigurumis-vovo" target="_blank" rel="noopener noreferrer" aria-label="Ver projeto no GitHub">
                                 <i class="fa-brands fa-github"></i>
                             </a>
                         </div>
@@ -177,9 +177,9 @@
                                 <li>JavaScript</li>
                             </ul>
                             
-                            <button class="details-btn">Detalhes</button>
-                            
-                            <a href="https://github.com/grazielle-marttdev/github-profile-viewer" target="_blank">
+                            <button class="details-btn" aria-label="Ver detalhes do projeto Visualizador de Perfil do GitHub" aria-expanded="false" aria-controls="modal-container">Detalhes</button>
+
+                            <a href="https://github.com/grazielle-marttdev/github-profile-viewer" target="_blank" rel="noopener noreferrer" aria-label="Ver projeto no GitHub">
                                 <i class="fa-brands fa-github"></i>
                             </a>
                         </div>
@@ -207,9 +207,9 @@
                                 <li>CSS3</li>
                             </ul>
                             
-                            <button class="details-btn">Detalhes</button>
+                            <button class="details-btn" aria-label="Ver detalhes do projeto SyntaxWear E-commerce" aria-expanded="false" aria-controls="modal-container">Detalhes</button>
 
-                            <a href="https://github.com/grazielle-marttdev/ecommerce-syntaxwear" target="_blank">
+                            <a href="https://github.com/grazielle-marttdev/ecommerce-syntaxwear" target="_blank" rel="noopener noreferrer" aria-label="Ver projeto no GitHub">
                                 <i class="fa-brands fa-github"></i>
                             </a>
                         </div>
@@ -219,8 +219,11 @@
 
             <div class="modal-container hide" id="modal-container">
                 <div class="content">
-                    <i class="fa-solid fa-xmark " id="close-btn"></i>
-                    <div class="project-info">
+                    <button id="close-btn" aria-label="Fechar detalhes do projeto">
+                        <i class="fa-solid fa-xmark "></i>
+                    </button>
+
+                    <div class="project-info"> 
                         <h3 class="title" id="title">Título do Projeto</h3>
                         <p id="description"></p>
                     </div>
@@ -252,19 +255,19 @@
 
             <ul class="contact-links"> 
                 <li>
-                    <a href="mailto:gzm8martins@gmail.com">
+                    <a href="mailto:gzm8martins@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Enviar email">
                         <i class="fa-regular fa-envelope"></i>
                         Email
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com/in/grazielle-martins-557b61334/" target="_blank">
+                    <a href="https://www.linkedin.com/in/grazielle-martins-557b61334/" target="_blank" rel="noopener noreferrer" aria-label="Ver perfil no LinkedIn">
                         <i class="fa-brands fa-linkedin-in"></i>
                         LinkedIn
                     </a>
                 </li>
                 <li>   
-                    <a href="https://github.com/grazielle-marttdev" target="_blank">
+                    <a href="https://github.com/grazielle-marttdev" target="_blank" rel="noopener noreferrer" aria-label="Ver perfil no GitHub">
                         <i class="fa-brands fa-github"></i>
                         GitHub
                     </a>
