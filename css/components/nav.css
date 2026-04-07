@@ -10,21 +10,8 @@ header {
     z-index: 1;
 }
 
-header .logo {
-    font-family: var(--font-family-heading);
-    font-size: 1.125rem;
-    font-weight: bold;
-    color: var(--foreground);
-    transition: color 0.3s ease;
-}
-
-header .logo:hover {
-    color: var(--primary);
-}
-
-header .logo span {
-    font-family: var(--font-family-heading);
-    color: var(--primary);
+header .logo img {
+    width: 55px;
 }
 
 header .menu-toggle {
@@ -42,11 +29,11 @@ header .menu-toggle:hover {
 
 header nav ul {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 header nav ul li a {
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
     font-weight: 600;
     padding-bottom: 3px;
     transition: color 0.3s ease, border-bottom 0.3s ease;
