@@ -6,25 +6,25 @@ export function projectModal() {
     const modalData = [
         {
             title: "Amigurumis da Vovó | Projeto Pessoal",
-            description: "Protótipo de e-commerce para venda de amigurumis, desenvolvido com foco em organização de código, geração dinâmica de produtos e abordagem mobile-first.",
-            techDescription: "Implementei a geração dinâmica de produtos com JavaScript orientado a objetos, utilizando classes para estruturar a criação de componentes. Organizei os dados em arquivos JSON e desenvolvi a renderização dinâmica do catálogo via manipulação do DOM. Estruturei o projeto de forma modular, separando responsabilidades para melhorar a escalabilidade e manutenção do código.",
-            learningDescription: "Evoluí na modelagem de dados orientada a objetos e na aplicação prática do conceito mobile-first. Desenvolvi maior clareza na organização estrutural do projeto e na tomada de decisões técnicas fundamentadas.",
+            description: "E-commerce de amigurumis desenvolvido com arquitetura modular, focando em performance mobile e escalabilidade através de dados dinâmicos.",
+            techDescription: "Implementei uma arquitetura orientada a objetos para gerenciar o catálogo de produtos, consumindo dados de uma estrutura JSON que simula uma API. Priorizei a manipulação eficiente do DOM e o uso de componentes reutilizáveis, garantindo que a interface seja fluida, acessível (A11y) e fácil de manter.",
+            learningDescription: "Aprimorei a modelagem de dados e a aplicação rigorosa da metodologia mobile-first. Consolidei práticas de organização de código focada em escalabilidade e tomei decisões técnicas fundamentadas em performance.",
             techs: ["HTML5", "CSS3", "JavaScript"]
         },
 
         {
             title: "Visualizador de Perfil do GitHub | DevQuest",
-            description: "Aplicação web que consome a API pública do GitHub para exibir dados dinâmicos de usuários e repositórios.",
-            techDescription: "Implementei requisições HTTP com JavaScript, organizando a lógica para separar consumo de API e renderização. Trabalhei com manipulação de dados assíncronos e atualização dinâmica do DOM.",
-            learningDescription: "Consolidei o entendimento sobre fluxo assíncrono, tratamento de erros e organização de código voltada à clareza e manutenção.",
+            description: "Aplicação interativa que utiliza a Fetch API para conectar-se ao ecossistema do GitHub, entregando dados de usuários em tempo real.",
+            techDescription: "Desenvolvi o consumo da API do GitHub utilizando Async/Await para garantir um fluxo de código limpo e legível. Estruturei uma lógica resiliente de tratamento de erros para mitigar falhas de rede e garantir que estados vazios ou usuários inexistentes sejam comunicados de forma clara, priorizando a experiência do usuário (UX).",
+            learningDescription: "Otimizei o gerenciamento de estados assíncronos e a separação de responsabilidades entre lógica de serviço e interface. Reforcei a importância de uma aplicação robusta frente a comportamentos inesperados de APIs externas.",
             techs: ["HTML5", "CSS3", "JavaScript"]
         },
         
         {
             title: "SyntaxWear E-commerce | DevQuest",
-            description: "Projeto de e-commerce responsivo desenvolvido com foco em estruturação semântica, organização de layout e adaptação para diferentes dispositivos.",
-            techDescription: "Estruturei o projeto com HTML5 semântico e desenvolvi o layout utilizando CSS3 com Flexbox e Grid. Apliquei Media Queries para garantir responsividade e mantive organização de arquivos e commits convencionais para versionamento consistente.",
-            learningDescription: "Aprimorei a construção de layouts responsivos utilizando Grid e Flexbox de forma complementar. Compreendi na prática como uma boa estrutura semântica e um versionamento organizado facilitam manutenção e escalabilidade.",
+            description: "Plataforma de e-commerce focada em alta fidelidade visual e consistência de layout entre múltiplos dispositivos.",
+            techDescription: "Projetei um sistema de layout híbrido utilizando CSS Grid para a estrutura macro e Flexbox para o alinhamento refinado de componentes. Apliquei estratégias de responsividade para manter a harmonia visual em diversas resoluções, desde telas ultrawide até dispositivos móveis compactos, utilizando HTML5 semântico.",
+            learningDescription: "Dominei o uso complementar de Grid e Flexbox para resolver desafios complexos de design responsivo. Validei na prática como uma estrutura semântica sólida e um fluxo de trabalho profissional com Git facilitam a manutenção e o SEO do projeto.",
             techs: ["HTML5", "CSS3"]
         }
     ]
