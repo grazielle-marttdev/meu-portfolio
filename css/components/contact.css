@@ -42,6 +42,7 @@
 .contact .contact-text {
     font-family: var(--font-family-monospace);
     font-size: 0.75rem;
+    text-align: center;
     opacity: 0.6;
 }
 

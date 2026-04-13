@@ -15,9 +15,9 @@
 }
 
 .projects .projects-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    align-items: stretch;
     gap: 2rem;
 }
 
@@ -46,6 +46,8 @@
 .project .content {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
     gap: 1rem;
     padding: 0 2rem 1.5rem;
 }
@@ -194,6 +196,12 @@
     display: none;
 }
 
+
+@media (max-width: 1024px) {
+    .projects .projects-container {
+        grid-template-columns: repeat(1, minmax(300px, 1fr));
+    }
+}
 
 @media (max-width: 640px) {
     .project .content {
