@@ -65,7 +65,7 @@
 
 .hero h1 {
     font-family: var(--font-family-heading);
-    font-size: clamp(2.8rem, 8vw, 5rem); /* nunca menor que 2.8rem, usar 8vw, nunca maior que 6rem */
+    font-size: clamp(2.8rem, 8vw, 4rem); /* nunca menor que 2.8rem, usar 8vw, nunca maior que 6rem */
     line-height: 1.05;
     text-align: center;
     text-transform: uppercase;
