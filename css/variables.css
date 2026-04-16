@@ -2,11 +2,11 @@
 
 :root {
     /* === CORES BASE === */
-    --background: hsl(220 20% 2%); 
+    --background: #040418; 
     --foreground: hsl(210 20% 92%); 
 
     /* === SUPERFÍCIES === */
-    --card: hsl(220 15% 6%); 
+    --card: hsl(219, 44%, 8%); 
     --card-foreground: hsl(210 20% 92%);
     --popover: hsl(220 15% 6%);
     --popover-foreground: hsl(210 20% 92%);
@@ -26,6 +26,9 @@
     --primary-light-35: rgba(111, 211, 255, 0.35);
     --primary-light-15: rgba(111, 211, 255, 0.15);
     --primary-light-08: rgba(111, 211, 255, 0.08);
+    --scrollbar-track: hsl(220 18% 8%);
+    --scrollbar-thumb: hsl(193 70% 32%);
+    --scrollbar-thumb-hover: hsl(193 100% 43%);
     
     /* === COR SECUNDÁRIA (Grafite Metálico) === */
     --secondary: hsl(215 15% 12%); 
@@ -41,8 +44,8 @@
     /* === UTILITÁRIOS === */
     --destructive: hsl(0 62% 50%); 
     --destructive-foreground: hsl(210 20% 98%);
-    --border: hsl(215 15% 15%); 
-    --border-muted: hsl(216, 12%, 8%);
+    --border: hsl(218, 42%, 12%); 
+    --border-muted: hsl(218, 48%, 9%);
     --input: hsl(215 15% 12%);
     --ring: hsl(193 100% 43%); 
 

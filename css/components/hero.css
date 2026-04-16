@@ -65,15 +65,13 @@
 
 .hero h1 {
     font-family: var(--font-family-heading);
-    font-size: clamp(2.8rem, 8vw, 6rem); /* nunca menor que 2.8rem, usar 8vw, nunca maior que 6rem */
+    font-size: clamp(2.8rem, 8vw, 5rem); /* nunca menor que 2.8rem, usar 8vw, nunca maior que 6rem */
     line-height: 1.05;
     text-align: center;
+    text-transform: uppercase;
     text-wrap: balance; /* equilibra quebras de linha, deixando-as com tamanho parecido */
     color: var(--foreground);
     margin-bottom: 1rem;
-    text-shadow: 
-        0 0 4px var(--primary-45),
-        0 0 10px var(--primary-25);
 }
 
 .hero h1 .highlight-name {
