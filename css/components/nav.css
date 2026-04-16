@@ -94,7 +94,7 @@ header nav ul li a.active {
 
     header nav {
         position: absolute;
-        top: 50px;
+        top: 100%;
         left: 50%;
         transform: translateX(-50%);
         width: 100%;
