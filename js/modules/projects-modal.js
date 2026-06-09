@@ -5,6 +5,14 @@ export function projectModal() {
 
     const modalData = [
         {
+            title: "MarttDev log_ | Projeto Pessoal",
+            description: "Um diário público de desenvolvimento web projetado para registrar a evolução técnica constante, focado em simplicidade, performance e total controle sobre o código.",
+            techDescription: "Implementei um feed dinâmico utilizando JavaScript Vanilla e Fetch API para consumir dados de uma estrutura JSON. Desenvolvi um sistema de busca inteligente em tempo real e filtros por tags (chips), garantindo uma interface reativa sem o uso de frameworks. A estrutura foi construída com HTML5 semântico e CSS3 modularizado.",
+            learningDescription: "Aprofundei conhecimentos em manipulação avançada de DOM, lógica de filtragem de dados e organização de projetos sem dependências externas. Pratiquei a criação de interfaces focadas em legibilidade e experiência de usuário (UX).",
+            techs: ["HTML5", "CSS3", "JavaScript", "JSON"]
+        },
+
+        {
             title: "Amigurumis da Vovó | Projeto Pessoal",
             description: "E-commerce de amigurumis desenvolvido com arquitetura modular, focando em performance mobile e escalabilidade através de dados dinâmicos.",
             techDescription: "Implementei uma arquitetura orientada a objetos para gerenciar o catálogo de produtos, consumindo dados de uma estrutura JSON que simula uma API. Priorizei a manipulação eficiente do DOM e o uso de componentes reutilizáveis, garantindo que a interface seja fluida, acessível (A11y) e fácil de manter.",
