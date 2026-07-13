@@ -4,8 +4,8 @@ Portfólio pessoal desenvolvido em HTML, CSS e JavaScript para mostrar habilidad
 
 ## Descrição
 
-Website one-page com foco em apresentação pessoal, estudos de caso e contato.
-O projeto é um portfólio responsivo que usa navegação acessível, modal de projetos e estrutura modular de Javascript.
+Website one-page com foco em apresentação pessoal, estudos de caso e contato profissional.
+O projeto é um portfólio responsivo que usa navegação acessível, modal dinâmico de projetos, efeitos visuais refinados e estrutura modular de JavaScript com ES Modules.
 
 ## Tecnologias
 
@@ -16,11 +16,12 @@ O projeto é um portfólio responsivo que usa navegação acessível, modal de p
 
 ## Funcionalidades
 
-- Navegação principal com menu mobile toggle
-- Seções semânticas: Início, Sobre, Projetos e Contato
-- Modal de detalhes dos projetos com conteúdo dinâmico
-- Links externos para GitHub e LinkedIn
-- Layout responsivo para desktop e dispositivos móveis
+- **Navegação inteligente**: Menu mobile toggle com suporte a tecla ESC e highlight ativo dinâmico via IntersectionObserver
+- **Seções semânticas**: Início, Sobre, Projetos e Contato com acessibilidade ARIA
+- **Modal dinâmico**: Detalhes dos projetos com conteúdo renderizado em tempo real
+- **Design visual aprimorado**: Gradientes, efeitos hover, animações suaves e padrão grid de background
+- **Links externos**: GitHub e LinkedIn com ícones Font Awesome
+- **Layout responsivo**: Desktop, tablet e dispositivos móveis com breakpoints otimizados
 
 ## Estrutura do projeto
 
@@ -41,6 +42,7 @@ meu-portfolio/
 |   |__ components.css
 |__ assets/
 |   |__ images/
+|       |__ marttdev-log.webp
 |       |__ amigurumis-da-vovo.webp
 |       |__ buscar-perfil-github.webp
 |       |__ sintaxwear.webp
@@ -48,6 +50,7 @@ meu-portfolio/
     |__ main.js
     |__ modules/
         |__ menu.js
+        |__ navigation.js
         |__ projects-modal.js
 ```
 
@@ -63,9 +66,12 @@ meu-portfolio/
 
 ## Possíveis melhorias futuras
 
-- adicionar integração com formulários de contato
-- usar React para componentização futura
-- adicionar testes e automação de build
+- Integração com formulários de contato (backend)
+- Migração para React para componentização avançada
+- Testes automatizados e workflow CI/CD
+- Implementação de dark/light mode toggle
+- Animações com Framer Motion ou similar
+- Adicionar testes e automação de build
 
 ## Contato
 
