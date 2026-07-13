@@ -3,11 +3,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     width: 100%;
-    backdrop-filter: blur(10px);
     padding: 1rem 3rem;
-    z-index: 1;
+    background: rgba(4, 4, 24, 0.72);
+    border-bottom: 1px solid rgba(79, 195, 255, 0.08);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.2);
+    z-index: 10;
 }
 
 header .logo img {
@@ -18,13 +20,17 @@ header .menu-toggle {
     font-size: 1.125rem;
     color: var(--muted-foreground);
     background-color: transparent;
-    border: none;
-    transition: color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.625rem;
+    transition: color 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
     cursor: pointer;
 }
 
 header .menu-toggle:hover {
     color: var(--foreground);
+    border-color: var(--primary-light-08);
+    transform: translateY(-1px);
 }
 
 header nav ul {
@@ -36,6 +42,8 @@ header nav ul li a {
     font-size: 0.9375rem;
     font-weight: 600;
     padding-bottom: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
     transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
