@@ -29,7 +29,7 @@
     max-width: 480px;
     width: 100%;
     height: 100%;
-    max-height: 520px;
+    max-height: 560px;
     overflow: hidden;
     background: linear-gradient(180deg, rgba(5, 9, 22, 0.95), rgba(9, 14, 32, 0.95));
     border: 1px solid var(--surface-glow);
@@ -60,7 +60,7 @@
 
 .project .content span {
     font-family: var(--font-family-monospace);
-    font-size: 14px;
+    font-size: 0.875rem;
     color: var(--primary-80);
 }
 
@@ -95,16 +95,10 @@
     transform: scale(1.04);
 }
 
-.content .info {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 25px;
-}
-
 .content .techs {
+    display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 0.5rem;
 }
 
@@ -113,12 +107,23 @@
     color: var(--primary-light-80);
     border: 1px solid var(--primary-25);
     border-radius: 4px;
+    /* font-family: var(--font-family-monospace);
+    font-size: 0.75rem;
+    text-align: center;
+    padding: 0.25rem 0.75rem; */
+}
+
+.content .info {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1.5625rem;
 }
 
 .content .info button {
     background-color: var(--primary-80);
     font-family: var(--font-family-monospace);
-    padding: 4px 12px;
+    padding: 0.25rem 0.75rem;
     border: none;
     border-radius: 4px;
     cursor: pointer;

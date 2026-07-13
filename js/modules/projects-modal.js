@@ -14,10 +14,10 @@ export function projectModal() {
 
         {
             title: "Amigurumis da Vovó | Projeto Pessoal",
-            description: "E-commerce de amigurumis desenvolvido com arquitetura modular, focando em performance mobile e escalabilidade através de dados dinâmicos.",
-            techDescription: "Implementei uma arquitetura orientada a objetos para gerenciar o catálogo de produtos, consumindo dados de uma estrutura JSON que simula uma API. Priorizei a manipulação eficiente do DOM e o uso de componentes reutilizáveis, garantindo que a interface seja fluida, acessível (A11y) e fácil de manter.",
-            learningDescription: "Aprimorei a modelagem de dados e a aplicação rigorosa da metodologia mobile-first. Consolidei práticas de organização de código focada em escalabilidade e tomei decisões técnicas fundamentadas em performance.",
-            techs: ["HTML5", "CSS3", "JavaScript"]
+            description: "E-commerce artesanal full-stack para divulgação e venda de amigurumis, com API REST própria, banco de dados PostgreSQL e front-end modular focado em acessibilidade e experiência mobile-first.",
+            techDescription: "Construí uma API REST com Node.js e Express que serve dados de um banco PostgreSQL, utilizando Pool de conexões, queries parametrizadas contra SQL Injection e um formato de resposta padronizado. No front-end, implementei uma arquitetura orientada a objetos com ES Modules para renderizar dinamicamente os produtos consumidos da API, com CSS organizado em camadas (reset, variáveis, base, componentes, utilitários) e conformidade com WCAG 2.1 nível AA.",
+            learningDescription: "Consolidei a transição de dados estáticos para uma arquitetura cliente-servidor real, aprendendo a modelar schemas SQL, versionar a estrutura do banco e integrar front e back-end via fetch assíncrono com tratamento robusto de erros. Aprimorei práticas de acessibilidade, segurança de API e organização de código escalável.",
+            techs: ["HTML5", "CSS3", "JavaScript", "Node.js", "Express", "PostgreSQL"]
         },
 
         {
