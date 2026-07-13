@@ -9,7 +9,6 @@ export function initMenu() {
         openIcon.classList.add('hide');
         closeIcon.classList.remove('hide');
         btnMenuToggle.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden'; // impede scroll
     }
 
     function closeMenu() {
@@ -17,7 +16,6 @@ export function initMenu() {
         openIcon.classList.remove('hide');
         closeIcon.classList.add('hide');
         btnMenuToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = ''; // restaura scroll
     }
 
     function toggleMenu() {

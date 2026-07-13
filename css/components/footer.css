@@ -1,9 +1,12 @@
 footer {
     margin-bottom: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(79, 195, 255, 0.08);
 }
 
 footer p {
     font-family: var(--font-family-monospace);
     font-size: 0.75rem;
-    opacity: 0.4;
+    opacity: 0.55;
+    color: var(--foreground);
 }
