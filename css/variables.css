@@ -52,6 +52,8 @@
     /* === TOKENS ESPECIAIS HALO === */
     --glow-primary: hsla(193, 100%, 43%, 0.357); /* Para efeitos de brilho */
     --radius: 0.25rem; /* Bordas angulares (pequenas) */
+    --surface-glow: rgba(79, 195, 255, 0.12);
+    --text-muted: rgba(212, 222, 245, 0.78);
 
     /* TIPOGRAFIA */
     --font-family-heading: 'Orbitron', sans-serif;
