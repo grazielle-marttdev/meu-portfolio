@@ -4,6 +4,22 @@
     justify-content: center;
     margin: 0;
     width: 100%;
+    padding-top: 6rem;
+    background-image:
+        radial-gradient(circle at 20% 10%, var(--surface-glow), transparent 18%),
+        radial-gradient(circle at 85% 15%, var(--primary-light-08), transparent 16%);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(0deg, rgba(79, 195, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79, 195, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 45px, 45px 100%;
+    opacity: 0.3;
+    pointer-events: none;
 }
 
 .hero .status {
@@ -72,6 +88,7 @@
     text-wrap: balance; /* equilibra quebras de linha, deixando-as com tamanho parecido */
     color: var(--foreground);
     margin-bottom: 1rem;
+    text-shadow: 0 0 24px rgba(79, 195, 255, 0.16);
 }
 
 .hero h1 .highlight-name {
@@ -98,10 +115,11 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
     padding: 0.5rem 1rem;
-    border: 1px solid var(--primary-35);
-    box-shadow: 
-        0 0 12px var(--primary-light-15),
-        inset 0 0 12px var(--primary-light-08);
+    background: rgba(7, 12, 29, 0.88);
+    border: 1px solid rgba(79, 195, 255, 0.18);
+    box-shadow:
+        0 0 18px rgba(79, 195, 255, 0.08),
+        inset 0 0 14px rgba(79, 195, 255, 0.06);
     margin-bottom: 1rem;
 }
 
@@ -129,12 +147,20 @@
 }
 
 .social-media a {
-    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid rgba(79, 195, 255, 0.15);
+    border-radius: 50%;
+    transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
 }
 
 .social-media a:hover {
     color: var(--foreground);
-    transform: scale(1.1);
+    transform: scale(1.08);
+    background-color: rgba(79, 195, 255, 0.08);
 }
 
 .hero .explore-button a {
