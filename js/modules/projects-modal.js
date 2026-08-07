@@ -5,14 +5,6 @@ export function projectModal() {
 
     const modalData = [
         {
-            title: "MarttDev log_ | Projeto Pessoal",
-            description: "Um diário público de desenvolvimento web projetado para registrar a evolução técnica constante, focado em simplicidade, performance e total controle sobre o código.",
-            techDescription: "Implementei um feed dinâmico utilizando JavaScript Vanilla e Fetch API para consumir dados de uma estrutura JSON. Desenvolvi um sistema de busca inteligente em tempo real e filtros por tags (chips), garantindo uma interface reativa sem o uso de frameworks. A estrutura foi construída com HTML5 semântico e CSS3 modularizado.",
-            learningDescription: "Aprofundei conhecimentos em manipulação avançada de DOM, lógica de filtragem de dados e organização de projetos sem dependências externas. Pratiquei a criação de interfaces focadas em legibilidade e experiência de usuário (UX).",
-            techs: ["HTML5", "CSS3", "JavaScript", "JSON"]
-        },
-
-        {
             title: "Amigurumis da Vovó | Projeto Pessoal",
             description: "E-commerce artesanal full-stack para divulgação e venda de amigurumis, com API REST própria, banco de dados PostgreSQL e front-end modular focado em acessibilidade e experiência mobile-first.",
             techDescription: "Construí uma API REST com Node.js e Express que serve dados de um banco PostgreSQL, utilizando Pool de conexões, queries parametrizadas contra SQL Injection e um formato de resposta padronizado. No front-end, implementei uma arquitetura orientada a objetos com ES Modules para renderizar dinamicamente os produtos consumidos da API, com CSS organizado em camadas (reset, variáveis, base, componentes, utilitários) e conformidade com WCAG 2.1 nível AA.",
