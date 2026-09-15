@@ -11,14 +11,6 @@ export function projectModal() {
             learningDescription: "Consolidei a transição de dados estáticos para uma arquitetura cliente-servidor real, aprendendo a modelar schemas SQL, versionar a estrutura do banco e integrar front e back-end via fetch assíncrono com tratamento robusto de erros. Aprimorei práticas de acessibilidade, segurança de API e organização de código escalável.",
             techs: ["HTML5", "CSS3", "JavaScript", "Node.js", "Express", "PostgreSQL"]
         },
-
-        {
-            title: "Visualizador de Perfil do GitHub | DevQuest",
-            description: "Aplicação interativa que utiliza a Fetch API para conectar-se ao ecossistema do GitHub, entregando dados de usuários em tempo real.",
-            techDescription: "Desenvolvi o consumo da API do GitHub utilizando Async/Await para garantir um fluxo de código limpo e legível. Estruturei uma lógica resiliente de tratamento de erros para mitigar falhas de rede e garantir que estados vazios ou usuários inexistentes sejam comunicados de forma clara, priorizando a experiência do usuário (UX).",
-            learningDescription: "Otimizei o gerenciamento de estados assíncronos e a separação de responsabilidades entre lógica de serviço e interface. Reforcei a importância de uma aplicação robusta frente a comportamentos inesperados de APIs externas.",
-            techs: ["HTML5", "CSS3", "JavaScript"]
-        },
         
         {
             title: "SyntaxWear E-commerce | DevQuest",
