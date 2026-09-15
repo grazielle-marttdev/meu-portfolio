@@ -1,7 +1,11 @@
+/* =============================================
+   SECTION PROJECTS
+   ============================================= */
+
 .section.projects {
     position: relative;
-    min-height: 100svh;
-    max-width: 100%;
+    max-width: 960px;
+    padding: 0 2rem;
 }
 
 .projects .section-title {
@@ -10,140 +14,230 @@
 
 .projects .subtitle {
     text-align: center;
-    font-weight: 600;
-    margin-bottom: 4rem;
+    font-weight: 400;
+    color: var(--muted-foreground);
+    margin-bottom: 5rem;
+    font-size: 1rem;
 }
 
+/* Container em coluna: cada projeto ocupa a largura toda */
 .projects .projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    width: 100%;
+}
+
+/* =============================================
+   CARD DE PROJETO — layout lado a lado
+   ============================================= */
+
+.project {
     display: grid;
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-    align-items: stretch;
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
 }
 
-.projects-container .project {
+/* Projeto reverso: foto vai para a direita */
+.project--reverse {
+    direction: rtl; /* inverte a ordem sem mudar o HTML */
+}
+
+.project--reverse > * {
+    direction: ltr; /* restaura o texto */
+}
+
+/* =============================================
+   POLAROID — moldura de foto revelada
+   ============================================= */
+
+.project-photo {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
+}
 
-    max-width: 480px;
+.polaroid {
+    /* Fundo branco espesso = moldura da foto revelada */
+    background: #ffffff;
+    padding: 0.875rem 0.875rem 2.5rem;
+    /* Sombra sólida deslocada (sem blur) — cor extraída da foto */
+    box-shadow: 6px 6px 0px var(--polaroid-shadow, var(--block-sage));
+    /* Leve inclinação no segundo card */
+    transform: rotate(-0.8deg);
+    transition: transform 0.3s ease;
     width: 100%;
-    height: 100%;
-    max-height: 560px;
+    max-width: 420px;
+}
+
+.project--reverse .polaroid {
+    transform: rotate(0.8deg); /* sentido oposto */
+    box-shadow: -6px 6px 0px var(--polaroid-shadow, var(--block-coral));
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.01);
+}
+
+.project--reverse .polaroid:hover {
+    transform: rotate(0deg) scale(1.01);
+}
+
+/* Container da imagem com o overlay */
+.polaroid-inner {
+    position: relative;
     overflow: hidden;
-    background: linear-gradient(180deg, rgba(5, 9, 22, 0.95), rgba(9, 14, 32, 0.95));
-    border: 1px solid var(--surface-glow);
-    border-radius: 1rem;
-    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-    transform-origin: center;
+    line-height: 0; /* remove gap abaixo da imagem */
 }
 
-.project .image img {
+.polaroid-inner img {
     width: 100%;
-    transition: transform 0.5s ease;
+    display: block;
+    /* Efeito retrô: sepia suave + saturação reduzida */
+    filter: sepia(0.25) saturate(0.85) contrast(1.05);
+    transition: filter 0.4s ease, transform 0.5s ease;
 }
 
-.project .content {
+/* =============================================
+   OVERLAY DE HOVER — "Ver o projeto"
+   ============================================= */
+
+.photo-overlay {
+    position: absolute;
+    inset: 0;
+    /* Coral clarinho translúcido sobre a foto */
+    background-color: rgba(234, 137, 135, 0.82);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-decoration: none;
+}
+
+.photo-overlay span {
+    color: #ffffff;
+    font-family: var(--font-family-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    background: transparent;
+}
+
+/* Ativa o overlay no hover da polaroid inteira */
+.polaroid:hover .photo-overlay {
+    opacity: 1;
+}
+
+.polaroid:hover .polaroid-inner img {
+    transform: scale(1.03);
+    filter: sepia(0.1) saturate(0.9) contrast(1.0);
+}
+
+/* =============================================
+   BOTÃO MOBILE — visível apenas em telas pequenas
+   ============================================= */
+
+.mobile-live-btn {
+    display: none; /* escondido no desktop */
+}
+
+/* =============================================
+   INFORMAÇÕES DO PROJETO
+   ============================================= */
+
+.project-info {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    gap: 1rem;
-    padding: 0 2rem 1.5rem;
+    gap: 1.5rem;
 }
 
-.project .content h3 {
-    font-family: var(--font-family-heading);
-    color: var(--foreground);
-    margin-bottom: 1rem;
-}
-
-.project .content span {
-    font-family: var(--font-family-monospace);
-    font-size: 0.875rem;
-    color: var(--primary-80);
-}
-
-.content .context h4,
-.content .decisions-tech h4,
-.content .learnings h4 {
+.project-tag {
     font-family: var(--font-family-monospace);
     font-size: 0.75rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    color: var(--primary-60);
-    margin-bottom: 0.5rem;
+    color: var(--primary);
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.25rem;
 }
 
-.content .learnings {
-    margin-bottom: 1.5rem;
+.project-info .context h3 {
+    font-family: var(--font-family-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--foreground);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
 }
 
-.content p {
+.project-info .context p {
     font-size: 0.9375rem;
-    font-weight: 600;
-    line-height: 1.625rem;
+    color: var(--muted-foreground);
+    line-height: 1.7;
 }
 
-.projects-container .project:hover {
-    box-shadow: 0 18px 60px rgba(79, 195, 255, 0.18);
-    border-color: var(--primary-45);
-    transform: translateY(-4px);
-}
-
-.projects-container .project:hover .image img {
-    transform: scale(1.04);
-}
-
-.content .techs {
+.project-info .techs {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
 
-.content .techs li {
-    background-color: var(--primary-light-08);
-    color: var(--primary-light-80);
-    border: 1px solid var(--primary-25);
-    border-radius: 4px;
-    /* font-family: var(--font-family-monospace);
-    font-size: 0.75rem;
-    text-align: center;
-    padding: 0.25rem 0.75rem; */
-}
-
-.content .info {
+.project-info .info {
     display: flex;
-    justify-content: start;
     align-items: center;
-    gap: 1.5625rem;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.content .info button {
-    background-color: var(--primary-80);
-    font-family: var(--font-family-monospace);
-    padding: 0.25rem 0.75rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.content .info button:hover {
+/* Botão "Detalhes" — sólido e flat */
+.details-btn {
     background-color: var(--primary);
+    color: var(--primary-foreground);
+    font-family: var(--font-family-body);
+    font-size: 0.875rem;
+    font-weight: 700;
+    padding: 0.5rem 1.25rem;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color 0.25s ease;
 }
 
-.content .info a i {
-    font-size: 1.375rem;
+.details-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Link GitHub — estilo discreto com texto */
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-family-monospace);
+    font-size: 0.8rem;
+    color: var(--muted-foreground);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.4rem 0.875rem;
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.github-link:hover {
     color: var(--foreground);
-    transition: color 0.3s ease, transform 0.3s ease;
+    border-color: var(--foreground);
 }
 
-.content .info a i:hover {
-    color: var(--primary);
-    transform: scale(1.02);
-}
+/* =============================================
+   MODAL
+   ============================================= */
 
 .projects .modal-container {
     position: fixed;
@@ -155,8 +249,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--primary-light-08);
-    backdrop-filter: blur(5px);
+    background-color: rgba(58, 52, 42, 0.4);
     z-index: 100;
 }
 
@@ -173,10 +266,10 @@
     padding: 2.5rem 2rem 2rem;
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: var(--secondary) var(--card);
-    background: rgba(4, 4, 24, 0.98);
-    border: 1px solid rgba(79, 195, 255, 0.14);
-    border-radius: 1rem;
+    scrollbar-color: var(--secondary) var(--background);
+    background: var(--background);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
 }
 
 .modal-container button {
@@ -184,11 +277,11 @@
     top: 15px;
     right: 15px;
     font-size: 1.2rem;
-    color: var(--foreground);
+    color: var(--muted-foreground);
     background-color: transparent;
     border: none;
     cursor: pointer;
-    transition: color 0.3s ease
+    transition: color 0.25s ease;
 }
 
 .modal-container button i:hover {
@@ -198,31 +291,116 @@
 .modal-container .content .title {
     font-family: var(--font-family-heading);
     font-size: 1.25rem;
+    font-weight: 700;
     color: var(--foreground);
     margin-bottom: 1rem;
+}
+
+.content .decisions-tech h4,
+.content .learnings h4 {
+    font-family: var(--font-family-monospace);
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.content .learnings {
+    margin-bottom: 1.5rem;
+}
+
+.content p {
+    font-size: 0.9375rem;
+    font-weight: 400;
+    color: var(--muted-foreground);
+    line-height: 1.65;
 }
 
 .modal-container.hide {
     display: none;
 }
 
+/* =============================================
+   RESPONSIVO — Tablet (≤ 900px)
+   ============================================= */
 
-@media (max-width: 1024px) {
-    .projects .projects-container {
-        grid-template-columns: repeat(1, minmax(300px, 1fr));
+@media (max-width: 900px) {
+    .project {
+        gap: 2.5rem;
+    }
+
+    .project-info .context h3 {
+        font-size: 1.25rem;
     }
 }
 
-@media (max-width: 640px) {
-    .project .content {
-        padding: 0 1.5rem 1.5rem;
+/* =============================================
+   RESPONSIVO — Mobile (≤ 680px)
+   Empilha: foto em cima, info embaixo
+   ============================================= */
+
+@media (max-width: 680px) {
+    .project,
+    .project--reverse {
+        grid-template-columns: 1fr;
+        direction: ltr; /* reseta o reverse no mobile */
+        gap: 1.5rem;
     }
 
-    .content .info {
-        gap: 16px;
+    .polaroid {
+        max-width: 100%;
+        transform: rotate(0deg) !important;
+        box-shadow: 5px 5px 0px var(--polaroid-shadow, var(--block-sage)) !important;
+    }
+
+    .project--reverse .polaroid {
+        box-shadow: 5px 5px 0px var(--polaroid-shadow, var(--block-coral)) !important;
+    }
+
+    /* No mobile, o overlay é hidden — botão fixo aparece no lugar */
+    .photo-overlay {
+        display: none;
+    }
+
+    /* Botão "Ver o projeto" sempre visível no mobile */
+    .mobile-live-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--font-family-body);
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--primary);
+        border: 1.5px solid var(--primary);
+        border-radius: var(--radius);
+        padding: 0.5rem 1.25rem;
+        transition: background-color 0.25s ease, color 0.25s ease;
+        text-decoration: none;
+        align-self: center;
+    }
+
+    .mobile-live-btn:hover {
+        background-color: var(--primary);
+        color: white;
+    }
+
+    .projects .subtitle {
+        margin-bottom: 3rem;
+    }
+
+    .projects .projects-container {
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-info .context h3 {
+        font-size: 1.125rem;
     }
 
     .modal-container .content {
-        padding: 3rem 2rem 2rem;
+        padding: 3rem 1.5rem 2rem;
     }
 }

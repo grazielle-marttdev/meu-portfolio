@@ -20,7 +20,6 @@
     color: var(--primary);
     font-family: var(--font-family-monospace);
     font-size: 0.75rem;
-    text-transform: uppercase;
     letter-spacing: 0.1rem;
     margin-bottom: 1rem;
 }
@@ -28,23 +27,27 @@
 .section-title {
     color: var(--foreground);
     font-family: var(--font-family-heading);
-    font-size: 2.25rem;
+    font-size: 2.75rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
 }
 
 .techs {
     display: flex;
     flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .techs li {
     font-family: var(--font-family-monospace);
     font-size: 0.75rem;
     text-align: center;
-    padding: 0.25rem 0.75rem;
-    border: 1px solid rgba(79, 195, 255, 0.16);
-    border-radius: 999px;
-    background-color: rgba(79, 195, 255, 0.06);
-    color: var(--foreground);
+    padding: 0.25rem 0.875rem;
+    border: 1px solid var(--accent-border);
+    border-radius: 4px;
+    background-color: var(--accent-solid);
+    color: var(--accent-text);
 }
 
 
@@ -54,7 +57,7 @@
     }
 
     .section .section-title {
-        font-size: 1.875rem;
+        font-size: 2.25rem;
     }
 }
 
@@ -70,6 +73,6 @@
     }
 
     .section .section-title {
-        font-size: 1.75rem;
+        font-size: 2rem;
     }
 }

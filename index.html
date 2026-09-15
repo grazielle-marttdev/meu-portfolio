@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio front-end pessoal desenvolvido com HTML, CSS e JavaScript, com foco em responsividade, acessibilidade e organização modular do código.">
-    <meta property="og:title" content="Meu Portfólio">
-    <meta property="og:description" content="Portfólio front-end pessoal desenvolvido com HTML, CSS e JavaScript, com foco em responsividade, acessibilidade e organização modular do código.">
+    <meta name="description" content="Desenvolvedora front-end disponível para freela: landing pages e sites modernos com HTML, CSS, JavaScript e React, com foco em qualidade e prazo.">
+    <meta property="og:title" content="Grazielle Martins — Frontend Freelancer">
+    <meta property="og:description" content="Desenvolvedora front-end disponível para freela: landing pages e sites modernos com HTML, CSS, JavaScript e React, com foco em qualidade e prazo.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="/assets/images/print-portfolio.webp">
-    <title>Portfólio de Grazielle Martins</title>
+    <title>Grazielle Martins — Frontend Freelancer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
@@ -20,8 +24,9 @@
 </head>
 <body>
     <header>
-        <a href="#hero" class="logo" aria-label="Ir para o início">
-            <img src="./assets/images/logo.png" alt="Logo do Portfólio de Grazielle Martins">
+        <!-- Logo mobile (escondida no desktop) -->
+        <a href="#hero" class="logo mobile-logo" aria-label="Ir para o início">
+            <img src="./assets/images/logo-light.webp" alt="Logo de Grazielle Martins">
         </a>
 
         <button class="menu-toggle hide" id="menu-toggle-btn" aria-controls="main-nav" aria-label="Abrir menu" aria-expanded="false">
@@ -30,9 +35,17 @@
         </button>
 
         <nav class="hide" id="main-nav" aria-label="Navegação principal">
-            <ul>
+            <ul class="nav-left">
                 <li><a href="#hero" class="link" aria-label="Ir para o início">Início</a></li>
                 <li><a href="#about" class="link" aria-label="Ir para a seção Sobre">Sobre</a></li>
+            </ul>
+
+            <!-- Logo desktop (centralizada entre os links) -->
+            <a href="#hero" class="logo desktop-logo" aria-label="Ir para o início">
+                <img src="./assets/images/logo-light.webp" alt="Logo de Grazielle Martins">
+            </a>
+
+            <ul class="nav-right">
                 <li><a href="#projects" class="link" aria-label="Ir para a seção Projetos">Projetos</a></li>
                 <li><a href="#contact" class="link" aria-label="Ir para a seção Contato">Contato</a></li>
             </ul>
@@ -41,19 +54,31 @@
         
     <main>
         <section class="section hero" id="hero">
-            <div class="status">
-                <i class="fa-solid fa-circle"></i>
-                <span>Sistema Online</span>
-            </div>
+            <div class="hero-layout">
+                <div class="hero-content">
+                    <div class="status">
+                        <i class="fa-solid fa-circle"></i>
+                        <span>Disponível para projetos</span>
+                    </div>
 
-            <h1><span class="highlight-name">Grazielle</span> Martins</h1>
+                    <h1><span class="highlight-name">Grazielle</span> Martins</h1>
 
-            <p>Desenvolvedora Front-end em formação, construindo interfaces com React e JavaScript, com foco em acessibilidade e boas práticas.</p>
-            <span class="role">Desenvolvedora Front-end | Explorando o ecossistema Fullstack</span>
+                    <p>Desenvolvedora front-end criando landing pages e sites sob medida. Projetos entregues com cuidado e atenção aos detalhes.</p>
+                    <span class="role">Frontend Dev · Freelancer</span>
 
-            <div class="social-media">
-                <a href="https://github.com/grazielle-marttdev" target="_blank" aria-label="GitHub" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/grazielle-martins-557b61334/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                    <div class="social-media">
+                        <a href="https://github.com/grazielle-marttdev" target="_blank" aria-label="GitHub" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/grazielle-martins-557b61334/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="hero-photo">
+                    <div class="polaroid" style="--polaroid-shadow: var(--accent);">
+                        <div class="polaroid-inner">
+                            <img src="./assets/images/avatar-grazi.webp" alt="Avatar de Grazielle Martins">
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <nav class="explore-button">
@@ -63,51 +88,34 @@
                 </a>
             </nav>
         </section>
-
-        <div class="section-divider"></div>
         
-        <section class="section about" id="about">
+        <section class=" about" id="about">
             <span class="span-section-number">01 // Sobre</span>
 
             <h2 class="section-title">Sobre Mim</h2>
 
             <div class="about-content">
                 <p>
-                    <span class="highlight">Desenvolvedora Front-end Júnior</span> formada pela <span class="highlight">Anhanguera</span> e em formação complementar pelo <span class="highlight">DevQuest</span>. Construo interfaces com <span class="tech-highlight">React</span>, <span class="tech-highlight">JavaScript</span> e <span class="tech-highlight">TypeScript</span>, com experiência prática em integração de APIs REST e bancos PostgreSQL através de projetos como o <span class="highlight">Amigurumis da Vovó</span> (e-commerce full-stack) e minha contribuição voluntária no Play Devs, onde já refatorei páginas e componentes de UI reais em produção.
+                    Olá! Sou a Grazi, <span class="highlight">desenvolvedora front-end</span> formada pela <span class="highlight">Anhanguera</span> e aprimorando meus conhecimentos pelo <span class="highlight">DevQuest</span>. Construo interfaces utilizando <span class="tech-highlight">JavaScript</span> e <span class="tech-highlight">CSS</span>, com experiência prática em integração de APIs REST e banco de dados (PostgreSQL). Também já colaborei como desenvolvedora voluntária na Play Devs, ajudando a refatorar componentes de UI em produção.
                 </p>
                 <p>
-                    Meu foco atual é consolidar React e TypeScript no front-end e ampliar conhecimento de back-end (<span class="tech-highlight">SQL</span>, <span class="tech-highlight">APIs</span>). Procuro minha primeira posição como <span class="highlight">Desenvolvedora Júnior</span> para aplicar essa base em produtos reais, com atenção a acessibilidade e código organizado.
+                    Atualmente estou me aprofundando em <span class="tech-highlight">React</span> e <span class="tech-highlight">TypeScript</span>, além de explorar mais o back-end (SQL e APIs). Mantenho minha prática constante através de projetos pessoais e estou aberta a novas <span class="highlight">oportunidades de freela</span>. Se você tem um projeto em mente, vamos conversar!
                 </p>
 
-                <h3>Atualmente focada em:</h3>
+                <h3>O que posso fazer por você:</h3>
                 <ul class="focus-list">
                     <li>
                         <i class="fa-solid fa-angle-right"></i>
-                        Desenvolvimento de interfaces responsivas e acessíveis
+                        Landing pages e sites responsivos do zero, com foco em conversão
                     </li>
                     <li>
                         <i class="fa-solid fa-angle-right"></i>
-                        Componentização e boas práticas no ecossistema React
+                        Interfaces em React com componentização e boas práticas
                     </li>
-                    <li>
-                        <i class="fa-solid fa-angle-right"></i>
-                        Consolidação de fundamentos avançados em JavaScript e introdução a TypeScript
-                    </li>
+
                 </ul>
             </div>
-
-            <hr class="divider-about"/>
-
-            <ul class="techs">
-                <li>React</li>
-                <li>TypeScript</li>
-                <li>JavaScript</li>
-                <li>HTML/CSS</li>
-                <li>SQL</li>
-            </ul>
         </section>
-
-        <div class="section-divider"></div>
         
         <section class="section projects" id="projects">
             <span class="span-section-number">02 // Projetos</span>
@@ -118,16 +126,30 @@
             </p>
 
             <div class="projects-container">
-                <div class="project">
-                    <div class="image">
-                        <a href="https://grazielle-marttdev.github.io/amigurumis-vovo/" target="_blank" rel="noopener noreferrer" aria-label="Ver projeto Amigurumis da Vovó">
-                            <img src="./assets/images/amigurumis-da-vovo.webp" alt="Projeto Amigurumis da Vovó" loading="lazy" decoding="async">
+
+                <!-- Projeto 1: foto à esquerda | cor dominante: terracota do novelo/amigurumis -->
+                <div class="project" style="--polaroid-shadow: #c97d52;">
+                    <div class="project-photo">
+                        <!-- Moldura polaroid + overlay de hover -->
+                        <div class="polaroid">
+                            <div class="polaroid-inner">
+                                <img src="./assets/images/amigurumis-da-vovo.webp" alt="Projeto Amigurumis da Vovó" loading="lazy" decoding="async">
+                                <!-- Overlay hover: desktop -->
+                                <a href="https://grazielle-marttdev.github.io/amigurumis-vovo/" target="_blank" rel="noopener noreferrer" class="photo-overlay" aria-label="Ver projeto Amigurumis da Vovó ao vivo">
+                                    <span>Ver o projeto <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Botão visível no mobile -->
+                        <a href="https://grazielle-marttdev.github.io/amigurumis-vovo/" target="_blank" rel="noopener noreferrer" class="mobile-live-btn" aria-label="Ver projeto Amigurumis da Vovó ao vivo">
+                            Ver o projeto <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
 
-                    <div class="content">
+                    <div class="project-info">
                         <div class="context">
-                            <h3>Amigurumis da Vovó <span>(Projeto Pessoal)</span></h3>
+                            <span class="project-tag">(Projeto Pessoal)</span>
+                            <h3>Amigurumis da Vovó</h3>
                             <p>
                                 E-commerce artesanal full-stack com API REST, banco de dados PostgreSQL e front-end modular com foco em acessibilidade e mobile-first.
                             </p>
@@ -144,55 +166,33 @@
 
                         <div class="info">
                             <button class="details-btn" aria-label="Ver detalhes do projeto Amigurumis da Vovó" aria-expanded="false" aria-controls="modal-container">Detalhes</button>
-
-                            <a href="https://github.com/grazielle-marttdev/amigurumis-vovo" target="_blank" rel="noopener noreferrer" aria-label="Ver projeto no GitHub">
-                                <i class="fa-brands fa-github"></i>
+                            <a href="https://github.com/grazielle-marttdev/amigurumis-vovo" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="Ver código no GitHub">
+                                <i class="fa-brands fa-github"></i> GitHub
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project">
-                    <div class="image">
-                        <a href="https://grazielle-marttdev.github.io/github-profile-viewer/" target="_blank" rel="noopener noreferrer" aria-label="Ver projeto Visualizador de Perfil do GitHub">
-                            <img src="assets/images/buscar-perfil-github.webp" alt="Projeto Visualizador de Perfil do GitHub" loading="lazy" decoding="async">
+                <!-- Projeto 2: foto à direita (reverse) | cor dominante: verde-oliva das árvores -->
+                <div class="project project--reverse" style="--polaroid-shadow: #6b8f5e;">
+                    <div class="project-photo">
+                        <div class="polaroid">
+                            <div class="polaroid-inner">
+                                <img src="assets/images/sintaxwear.webp" alt="Projeto SyntaxWear E-commerce" loading="lazy" decoding="async">
+                                <a href="https://grazielle-marttdev.github.io/ecommerce-syntaxwear/" target="_blank" rel="noopener noreferrer" class="photo-overlay" aria-label="Ver projeto SyntaxWear E-commerce ao vivo">
+                                    <span>Ver o projeto <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="https://grazielle-marttdev.github.io/ecommerce-syntaxwear/" target="_blank" rel="noopener noreferrer" class="mobile-live-btn" aria-label="Ver projeto SyntaxWear ao vivo">
+                            Ver o projeto <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
 
-                    <div class="content">
+                    <div class="project-info">
                         <div class="context">
-                            <h3>Visualizador de Perfil do GitHub <span>(DevQuest)</span></h3>
-                            <p>
-                                Integração com API externa para exibição dinâmica de dados, focando em tratamento de erros e experiência do usuário.
-                            </p>
-                        </div>
-
-                        <ul class="techs">
-                            <li>HTML5</li>
-                            <li>CSS3</li>
-                            <li>JavaScript</li>
-                        </ul>
-                        
-                        <div class="info">
-                            <button class="details-btn" aria-label="Ver detalhes do projeto Visualizador de Perfil do GitHub" aria-expanded="false" aria-controls="modal-container">Detalhes</button>
-
-                            <a href="https://github.com/grazielle-marttdev/github-profile-viewer" target="_blank" rel="noopener noreferrer" aria-label="Ver projeto no GitHub">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project">
-                    <div class="image">
-                        <a href="https://grazielle-marttdev.github.io/ecommerce-syntaxwear/" target="_blank" rel="noopener noreferrer" aria-label="Ver projeto SyntaxWear E-commerce">
-                            <img src="assets/images/sintaxwear.webp" alt="Projeto SyntaxWear E-commerce" loading="lazy" decoding="async">
-                        </a>
-                    </div>
-
-                    <div class="content">
-                        <div class="context">
-                            <h3>SyntaxWear E-commerce <span>(DevQuest)</span></h3>
+                            <span class="project-tag">(DevQuest)</span>
+                            <h3>SyntaxWear E-commerce</h3>
                             <p>
                                 Landing page responsiva com alta fidelidade visual, utilizando as melhores práticas de layout com Flexbox e Grid.
                             </p>
@@ -202,12 +202,11 @@
                             <li>HTML5</li>
                             <li>CSS3</li>
                         </ul>
-                        
+
                         <div class="info">
                             <button class="details-btn" aria-label="Ver detalhes do projeto SyntaxWear E-commerce" aria-expanded="false" aria-controls="modal-container">Detalhes</button>
-
-                            <a href="https://github.com/grazielle-marttdev/ecommerce-syntaxwear" target="_blank" rel="noopener noreferrer" aria-label="Ver projeto no GitHub">
-                                <i class="fa-brands fa-github"></i>
+                            <a href="https://github.com/grazielle-marttdev/ecommerce-syntaxwear" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="Ver código no GitHub">
+                                <i class="fa-brands fa-github"></i> GitHub
                             </a>
                         </div>
                     </div>
@@ -231,7 +230,7 @@
                     </div>
     
                     <div class="learnings">
-                        <h4>Aprendizados</h3>
+                        <h4>Aprendizados</h4>
                         <p id="learning-description"></p>
                     </div>
     
@@ -240,42 +239,65 @@
             </div>
         </section>
 
-        <div class="section-divider"></div>
-
-        <section class="section contact" id="contact">
+        <section class="contact" id="contact">
             <span class="span-section-number">03 // Contato</span>
 
-            <h2 class="section-title">Vamos conversar!</h2>
+            <h2 class="section-title">Vamos trabalhar juntos?</h2>
             <p class="subtitle">
-                Se você busca alguém comprometido com qualidade e aprendizado contínuo, ficarei feliz em conhecer seu projeto.
+                Tem uma ideia de site ou landing page? Me manda uma mensagem — adoro transformar ideias em projetos reais.
             </p>
 
-            <ul class="contact-links"> 
-                <li>
-                    <a href="mailto:gzm8martins@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Enviar email">
-                        <i class="fa-regular fa-envelope"></i>
-                        Email
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/grazielle-martins-557b61334/" target="_blank" rel="noopener noreferrer" aria-label="Ver perfil no LinkedIn">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                        LinkedIn
-                    </a>
-                </li>
-                <li>   
-                    <a href="https://github.com/grazielle-marttdev" target="_blank" rel="noopener noreferrer" aria-label="Ver perfil no GitHub">
-                        <i class="fa-brands fa-github"></i>
-                        GitHub
-                    </a>
-                </li>
-            </ul>
+            <div class="contact-layout">
 
-            <p class="contact-text">Sinta-se à vontade para me chamar para conversar ou para discutir novas oportunidades!</p>
+                <!-- Coluna esquerda: formulário -->
+                <form class="contact-form" action="#" method="POST" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" required placeholder="Seu nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" required placeholder="Como posso te ajudar?" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar Mensagem <i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+
+                <!-- Coluna direita: redes sociais -->
+                <aside class="contact-aside">
+                    <p class="contact-aside-label">ou me encontre nas redes</p>
+
+                    <ul class="contact-links">
+                        <li>
+                            <a href="https://wa.me/5561992017308" target="_blank" rel="noopener noreferrer" aria-label="Enviar mensagem no WhatsApp">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                WhatsApp
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/grazielle-martins-557b61334/" target="_blank" rel="noopener noreferrer" aria-label="Ver perfil no LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                                LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/grazielle-marttdev" target="_blank" rel="noopener noreferrer" aria-label="Ver perfil no GitHub">
+                                <i class="fa-brands fa-github"></i>
+                                GitHub
+                            </a>
+                        </li>
+                    </ul>
+
+                    <p class="contact-text">Respondo rápido! ☕ Fique à vontade pra mandar uma mensagem.</p>
+                </aside>
+            </div>
         </section>
         
         <footer>
-            <p>&copy; 2026 — Construído com propósito</p>
+            <p>&copy; 2026 — Construído com 🩷</p>
         </footer>
     </main>
 
