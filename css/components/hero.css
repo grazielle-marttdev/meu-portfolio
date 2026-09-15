@@ -1,75 +1,139 @@
 .section.hero {
     position: relative;
-    min-height: 100svh; /* altura mínima igual a 100% da viewport "estável" no mobile */
+    min-height: 100svh;
     justify-content: center;
     margin: 0;
     width: 100%;
-    padding-top: 6rem;
-    background-image:
-        radial-gradient(circle at 20% 10%, var(--surface-glow), transparent 18%),
-        radial-gradient(circle at 85% 15%, var(--primary-light-08), transparent 16%);
+    max-width: none; /* sem limite: hero ocupa a largura toda */
+    padding: 6rem 3rem 2rem; /* espaçamento lateral próprio */
+    overflow: hidden;
+}
+ 
+/* === GRID DE DUAS COLUNAS === */
+.hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+    max-width: 1100px;
 }
 
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* alinha tudo à esquerda */
+    gap: 0;
+}
+
+.hero-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Polaroid no hero: limita o tamanho máximo */
+.hero-photo .polaroid {
+    max-width: 340px;
+    width: 100%;
+    transform: rotate(1.2deg); /* inclinação suave */
+    box-shadow: 8px 8px 0px var(--polaroid-shadow, var(--accent));
+}
+
+.hero-photo .polaroid:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.hero-photo .polaroid-inner img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 1 / 1; /* força a imagem a ser sempre um quadrado perfeito */
+    object-fit: cover; /* mantém a proporção, cortando as bordas se necessário */
+    object-position: center; /* centraliza o corte da imagem */
+    filter: sepia(0.2) saturate(0.9) contrast(1.05); /* Efeito vintage */
+    transition: filter 0.4s ease, transform 0.5s ease;
+}
+
+.hero-photo .polaroid:hover .polaroid-inner img {
+    transform: scale(1.03);
+    filter: sepia(0.05) saturate(1) contrast(1.0);
+}
+
+/* === FORMAS GEOMÉTRICAS DECORATIVAS (sólidas, sem blur) === */
+
+/* Círculo sage — canto superior direito */
 .hero::before {
     content: '';
     position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(0deg, rgba(79, 195, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(79, 195, 255, 0.02) 1px, transparent 1px);
-    background-size: 100% 45px, 45px 100%;
-    opacity: 0.3;
+    top: 8%;
+    right: 6%;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: var(--block-sage);
+    opacity: 0.55;
     pointer-events: none;
+}
+
+/* Retângulo coral — canto inferior esquerdo */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 4%;
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    background-color: var(--block-coral);
+    opacity: 0.25;
+    border-radius: 0.5rem;
+    pointer-events: none;
+}
+
+/* Quadrado pequeno sage — topo esquerdo (via JS-free decorator) */
+.hero .geo-dot {
+    display: none; /* placeholder se quiser adicionar via HTML depois */
 }
 
 .hero .status {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-
     text-transform: uppercase;
     margin-bottom: 2rem;
 }
 
 .hero .status i {
     position: relative;
-    color: var(--primary);
+    color: var(--accent);
     font-size: 0.6rem;
-    filter: drop-shadow(0 0 6px var(--primary-light-80));
 }
 
+/* Pulse limpo: apenas escala, sem gradiente radial */
 .status i::after {
     content: '';
     position: absolute;
     inset: 50%;
-    width: 100%;
-    height: 100%;
+    width: 200%;
+    height: 200%;
     border-radius: 50%;
     transform: translate(-50%, -50%) scale(1);
-
-    background: radial-gradient(
-        circle,
-        var(--primary-60) 0%,
-        var(--primary-35) 40%,
-        var(--primary-10) 60%,
-        transparent 70%
-    );
-
+    background: var(--accent);
+    opacity: 0.3;
     animation: pulse 2.8s ease-in-out infinite;
 }
 
 @keyframes pulse {
     0% {
         transform: translate(-50%, -50%) scale(1);
-        opacity: 0.7;
+        opacity: 0.3;
     }
     50% {
-        transform: translate(-50%, -50%) scale(2.8);
-        opacity: 0.15;
+        transform: translate(-50%, -50%) scale(3.5);
+        opacity: 0;
     }
     100% {
         transform: translate(-50%, -50%) scale(1);
-        opacity: 0.7;
+        opacity: 0.3;
     }
 }
 
@@ -77,72 +141,55 @@
     font-family: var(--font-family-monospace);
     font-size: 0.75rem;
     letter-spacing: 0.07em;
+    color: var(--muted-foreground);
 }
 
+/* === TIPOGRAFIA EDITORIAL === */
 .hero h1 {
-    font-family: var(--font-family-heading);
-    font-size: clamp(2.8rem, 8vw, 4rem); /* nunca menor que 2.8rem, usar 8vw, nunca maior que 6rem */
-    line-height: 1.05;
-    text-align: center;
-    text-transform: uppercase;
-    text-wrap: balance; /* equilibra quebras de linha, deixando-as com tamanho parecido */
+    font-family: var(--font-family-name); /* Spectral — fonte serifada para o nome */
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    line-height: 1.0;
+    text-align: left;
+    white-space: nowrap;
     color: var(--foreground);
-    margin-bottom: 1rem;
-    text-shadow: 0 0 24px rgba(79, 195, 255, 0.16);
+    margin-bottom: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.02em; /* Spectral tem serifa, letra-spacing menor fica melhor */
 }
 
 .hero h1 .highlight-name {
     color: var(--primary);
-    font-family: var(--font-family-heading);
-    letter-spacing: 0.08em;
+    font-family: var(--font-family-name);
+    font-weight: 800;
 }
 
 .hero p {
-    font-size: 1.25rem;
-    margin: 0 1.25rem 2rem 1.25rem;
-    text-align: center;
-    max-width: 42ch; /* Limita a largura do texto para ~42 caracteres por linha */
-    opacity: 0.85;
+    font-size: 1rem;
+    margin: 0 0 1.5rem 0;
+    text-align: left;
+    max-width: 40ch;
+    color: var(--muted-foreground);
+    line-height: 1.7;
 }
 
+/* Role badge: fundo sólido sem borda difusa */
 .hero .role {
-    position: relative;
     display: inline-block;
-    color: var(--primary);
+    color: var(--muted-foreground);
     font-family: var(--font-family-monospace);
-    font-size: 0.875rem;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 0.5rem 1rem;
-    background: rgba(7, 12, 29, 0.88);
-    border: 1px solid rgba(79, 195, 255, 0.18);
-    box-shadow:
-        0 0 18px rgba(79, 195, 255, 0.08),
-        inset 0 0 14px rgba(79, 195, 255, 0.06);
-    margin-bottom: 1rem;
-}
-
-.role::before {
-    content: '';
-    position: absolute;
-    top: -1px;
-    left: 10%;
-    width: 80%;
-    height: 1px;
-
-    background: linear-gradient(
-        to right,
-        transparent,
-        var(--primary-light-80),
-        transparent
-    );
+    font-size: 0.8rem;
+    text-align: left;
+    letter-spacing: 0.08em;
+    padding: 0.4rem 1.25rem;
+    background: var(--muted);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 1.5rem;
 }
 
 .hero .social-media {
     display: flex;
     gap: 1.5rem;
-
     font-size: 1.5rem;
 }
 
@@ -152,15 +199,16 @@
     justify-content: center;
     width: 3rem;
     height: 3rem;
-    border: 1px solid rgba(79, 195, 255, 0.15);
-    border-radius: 50%;
-    transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    color: var(--muted-foreground);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .social-media a:hover {
-    color: var(--foreground);
-    transform: scale(1.08);
-    background-color: rgba(79, 195, 255, 0.08);
+    color: var(--primary);
+    background-color: var(--muted);
+    border-color: var(--primary);
 }
 
 .hero .explore-button a {
@@ -174,7 +222,8 @@
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
-    transition: color 0.3s ease;
+    color: var(--muted-foreground);
+    transition: color 0.25s ease;
 }
 
 .hero .explore-button a:hover {
@@ -183,51 +232,101 @@
 
 .explore-button span {
     font-family: var(--font-family-monospace);
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
 
 .explore-button i {
     font-size: 0.8rem;
-    opacity: 0.6;
+    opacity: 0.5;
     animation: arrowFloat 2.6s ease-in-out infinite;
 }
-
 
 @keyframes arrowFloat {
     0% {
         transform: translateY(0);
-        opacity: 0.5;
+        opacity: 0.4;
     }
     50% {
         transform: translateY(6px);
-        opacity: 0.85;
+        opacity: 0.8;
     }
     100% {
         transform: translateY(0);
-        opacity: 0.5;
+        opacity: 0.4;
     }
 }
 
 
 @media (max-width: 1024px) {
-    .hero .status i {
-        font-size: 0.5rem;
+    .hero::before {
+        width: 130px;
+        height: 130px;
+    }
+
+    .hero::after {
+        width: 60px;
+        height: 60px;
     }
 
     .hero p {
-        font-size: 1.125rem;
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 768px) {
+    /* No mobile empilha: texto em cima, foto embaixo */
+    .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 0 1.5rem;
+        margin: 2rem 0 0;
+    }
+
+    .hero-content {
+        align-items: center; /* centraliza no mobile */
+    }
+
+    .hero-photo {
+        order: 1; /* foto vai para baixo do texto */
+    }
+
+    .hero h1 {
+        text-align: center;
+        white-space: normal; /* permite quebra no mobile */
+    }
+
+    .hero p {
+        text-align: center;
+    }
+
+    .hero .role {
+        text-align: center;
+    }
+
+    .hero-photo .polaroid {
+        max-width: 260px;
+    }
+
+    .hero::before {
+        width: 100px;
+        height: 100px;
+        top: 5%;
+        right: 3%;
+    }
+
+    .hero::after {
+        bottom: 5%;
+        left: 15%;
+    }
+
     .hero .status span {
         font-size: 0.6875rem;
     }
 
     .hero p {
-        font-size: 1rem;
+        font-size: 0.9375rem;
     }
 
     .hero .role {
@@ -248,8 +347,13 @@
         padding: 1.5rem;
     }
 
-    .hero h1 {
-        letter-spacing: 0.03em;
+    .hero::before {
+        width: 80px;
+        height: 80px;
+    }
+
+    .hero::after {
+        display: none;
     }
 
     .hero p {

@@ -1,62 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300..600;1,9..40,300..600&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Spectral:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Noto+Sans:wght@400;500;600;700&display=swap');
 
 :root {
     /* === CORES BASE === */
-    --background: #040418; 
-    --foreground: hsl(210 20% 92%); 
+    --background: #f7f6ea;
+    --foreground: #3a342a;
 
     /* === SUPERFÍCIES === */
-    --card: hsl(219, 44%, 8%); 
-    --card-foreground: hsl(210 20% 92%);
-    --popover: hsl(220 15% 6%);
-    --popover-foreground: hsl(210 20% 92%);
+    --card: #ffffff;
 
-    /* === COR PRIMÁRIA (Cortana Cyan) === */
-    --primary: hsl(193 100% 43%); 
-    --primary-foreground: hsl(220 20% 2%);
+    /* === COR PRIMÁRIA (Coral Ghibli) === */
+    --primary: #EA8987;
+    --primary-foreground: #ffffff;
+    --primary-dark: #d9706e;
 
-    /* === TONS PRIMÁRIOS COM OPACIDADE === */
-    --primary-80: rgba(79, 195, 255, 0.8);
-    --primary-60: rgba(79, 195, 255, 0.6);
-    --primary-45: rgba(79, 195, 255, 0.45);
-    --primary-35: rgba(79, 195, 255, 0.35);
-    --primary-25: rgba(79, 195, 255, 0.25);
-    --primary-10: rgba(79, 195, 255, 0.1);
-    --primary-light-80: rgba(111, 211, 255, 0.8);
-    --primary-light-35: rgba(111, 211, 255, 0.35);
-    --primary-light-15: rgba(111, 211, 255, 0.15);
-    --primary-light-08: rgba(111, 211, 255, 0.08);
-    --scrollbar-track: hsl(220 18% 8%);
-    --scrollbar-thumb: hsl(193 70% 32%);
-    --scrollbar-thumb-hover: hsl(193 100% 43%);
-    
-    /* === COR SECUNDÁRIA (Grafite Metálico) === */
-    --secondary: hsl(215 15% 12%); 
-    --secondary-foreground: hsl(210 20% 85%);
+    /* === SCROLLBAR === */
+    --scrollbar-track: #e8e2d0;
+    --scrollbar-thumb: #C1D2D0;
+    --scrollbar-thumb-hover: #EA8987;
+
+    /* === COR SECUNDÁRIA (Azul-névoa/Sage) === */
+    --secondary: #C1D2D0;
 
     /* === TONS MUTADOS === */
-    --muted: hsl(215 12% 15%); 
-    --muted-foreground: hsl(215 15% 55%);
-    /* === COR DE ACENTO (UNSC Green) === */
-    --accent: hsl(160 60% 35%); 
-    --accent-foreground: hsl(210 20% 92%);
+    --muted: #e4deca;
+    --muted-foreground: #4d5a63;
+
+    /* === COR DE ACENTO (Verde-folha Ghibli) === */
+    --accent: #81B857;
+    --accent-solid: #ddefd0;
+    --accent-border: #b5d99a;
+    --accent-text: #4a7a25;
+
+    /* === BLOCOS GEOMÉTRICOS DECORATIVOS (cores sólidas) === */
+    --block-coral: #EA8987;
+    --block-sage: #C1D2D0;
 
     /* === UTILITÁRIOS === */
-    --destructive: hsl(0 62% 50%); 
-    --destructive-foreground: hsl(210 20% 98%);
-    --border: hsl(218, 42%, 12%); 
-    --border-muted: hsl(218, 48%, 9%);
-    --input: hsl(215 15% 12%);
-    --ring: hsl(193 100% 43%); 
+    --border: #d5ceba;
+    --border-muted: #e0d9c8;
 
-    /* === TOKENS ESPECIAIS HALO === */
-    --glow-primary: hsla(193, 100%, 43%, 0.357); /* Para efeitos de brilho */
-    --radius: 0.25rem; /* Bordas angulares (pequenas) */
-    --surface-glow: rgba(79, 195, 255, 0.12);
-    --text-muted: rgba(212, 222, 245, 0.78);
+    /* === TOKENS DE RADIUS (consistentes) === */
+    --radius: 0.5rem;
+    --radius-lg: 0.75rem;
 
     /* TIPOGRAFIA */
-    --font-family-heading: 'Orbitron', sans-serif;
-    --font-family-body: 'Rajdhani', sans-serif;
-    --font-family-monospace: 'JetBrains Mono', monospace;
+    --font-family-heading: 'Outfit', sans-serif;
+    --font-family-name: 'Spectral', serif; /* apenas para o nome no hero */
+    --font-family-body: 'Noto Sans', sans-serif;
+    --font-family-monospace: 'DM Mono', monospace;
 }

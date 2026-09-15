@@ -5,32 +5,44 @@ header {
     align-items: center;
     width: 100%;
     padding: 1rem 3rem;
-    background: rgba(4, 4, 24, 0.72);
-    border-bottom: 1px solid rgba(79, 195, 255, 0.08);
-    backdrop-filter: blur(18px);
-    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.2);
+    background: var(--background);
+    border-bottom: 1px solid var(--border);
     z-index: 10;
 }
 
 header .logo img {
     width: 55px;
+    mix-blend-mode: multiply;
+}
+
+/* Esconde a logo mobile no desktop */
+.mobile-logo {
+    display: none;
 }
 
 header .menu-toggle {
     font-size: 1.125rem;
     color: var(--muted-foreground);
     background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 0.5rem;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
     padding: 0.5rem 0.625rem;
-    transition: color 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
+    transition: color 0.25s ease, border-color 0.25s ease;
     cursor: pointer;
 }
 
 header .menu-toggle:hover {
-    color: var(--foreground);
-    border-color: var(--primary-light-08);
-    transform: translateY(-1px);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+/* Nav centralizado no desktop */
+header nav {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem; /* Distância entre listas e logo */
 }
 
 header nav ul {
@@ -39,12 +51,13 @@ header nav ul {
 }
 
 header nav ul li a {
+    font-family: var(--font-family-body);
     font-size: 0.9375rem;
-    font-weight: 600;
+    font-weight: 500;
     padding-bottom: 3px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
+    letter-spacing: 0.02em;
+    color: var(--muted-foreground);
+    transition: color 0.25s ease;
 }
 
 header nav ul li a:hover {
@@ -65,17 +78,16 @@ header nav ul li a.active {
 }
 
 @media (min-width: 1480px) {
-    header {
-        justify-content: space-around;
-        gap: 36.25rem;
+    header nav {
+        gap: 6rem;
     }
-
+    
     header nav ul {
-        gap: 3rem;
+        gap: 4rem;
     }
 
     header nav ul li a {
-        font-size: 0.9375rem;
+        font-size: 1rem;
     }
 }
 
@@ -84,8 +96,15 @@ header nav ul li a.active {
 @media (max-width: 768px) {
     header {
         padding: 1rem 2rem;
-        background-color: var(--card);
-        backdrop-filter: blur(0);
+    }
+
+    /* Retorna a logo original para a esquerda, esconde a centralizada */
+    .mobile-logo {
+        display: block;
+    }
+    
+    .desktop-logo {
+        display: none;
     }
 
     header .logo {
@@ -106,14 +125,18 @@ header nav ul li a.active {
         left: 50%;
         transform: translateX(-50%);
         width: 100%;
-        border-top: 1px solid var(--primary-light-08);
-    } 
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        background-color: var(--background);
+        padding: 1.5rem 0;
+        gap: 1.4rem;
+    }
 
     header nav ul {
-        background-color: var(--card);
         flex-direction: column;
         align-items: center;
         gap: 1.4rem;
-        padding: 1.25rem;
+        width: 100%;
     }
 }
