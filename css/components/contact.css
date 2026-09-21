@@ -75,6 +75,7 @@
     font-family: var(--font-family-body);
     font-size: 0.9375rem;
     transition: border-color 0.25s ease;
+    resize: none;
 }
 
 /* Focus: só borda sólida coral, sem glow */
@@ -183,6 +184,70 @@
     margin-top: 1rem;
 }
 
+
+/* ===================== TOAST ===================== */
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+
+    padding: 0.875rem 1.25rem;
+    border-radius: var(--radius-lg);
+    border-left: 4px solid transparent;
+
+    background: var(--card);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+    font-family: var(--font-family-body);
+    font-size: 0.9375rem;
+    color: var(--foreground);
+
+    /* Entrada: parte de baixo com fade */
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    pointer-events: none;
+}
+
+.toast--visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.toast--success {
+    border-left-color: var(--accent);
+}
+
+.toast--success i {
+    color: var(--accent);
+    font-size: 1.1rem;
+}
+
+.toast--error {
+    border-left-color: var(--primary-dark);
+}
+
+.toast--error i {
+    color: var(--primary-dark);
+    font-size: 1.1rem;
+}
+
+.error-label {
+    font-size: 0.875rem;
+}
+
+input.invalid-field {
+    border-color: #ff5252;
+}
+
+
 /* =============================================
    RESPONSIVO
    ============================================= */
@@ -221,6 +286,15 @@
 
     .contact-links li a i {
         font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .toast {
+        bottom: 1rem;
+        right: 1rem;
+        left: 1rem;
+        font-size: 0.875rem;
     }
 }
 

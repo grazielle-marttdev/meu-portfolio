@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -250,7 +250,7 @@
             <div class="contact-layout">
 
                 <!-- Coluna esquerda: formulário -->
-                <form class="contact-form" action="#" method="POST" id="contactForm">
+                <form class="contact-form" id="contactForm" novalidate>
                     <div class="form-group">
                         <label for="name">Nome</label>
                         <input type="text" id="name" name="name" required placeholder="Seu nome">
@@ -300,6 +300,13 @@
             <p>&copy; 2026 — Construído com 🩷</p>
         </footer>
     </main>
+
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- JustValidate -->
+    <script src="https://cdn.jsdelivr.net/npm/just-validate@4.3.0/dist/just-validate.production.min.js"></script>
+
 
     <script type="module" src="./js/main.js"></script>
 </body>
