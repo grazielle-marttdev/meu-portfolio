@@ -1,6 +1,10 @@
 # Meu Portfólio
 
 Portfólio pessoal desenvolvido em HTML, CSS e JavaScript para mostrar habilidades, projetos e contato profissional como freelancer front-end.
+> [!NOTE]
+> 🛠️ Portfólio em manutenção. Estou trabalhando em melhorias e novidades chegarão em breve.
+
+Portfólio pessoal desenvolvido em HTML, CSS e JavaScript para mostrar habilidades, projetos e contato profissional.
 
 ## Descrição
 
